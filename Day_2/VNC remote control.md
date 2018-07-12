@@ -3,7 +3,7 @@
 第二天的学习内容为配置好VNC Server，通过Wi-Fi或网线用电脑远程控制树莓派并显示树莓派图形界面，这样的话可以大大减少树莓派的外设，包括鼠标键盘显示器等。
 ***
 ## Step 0:在电脑上安装VNC Server客户端
-在 [VNC]: https://www.realvnc.com/en/connect/download/vnc/  "VNC Server官网" 下载VNC Server电脑版客户端，根据自己电脑系统选择Windows版、MacOS版或者是Linux版客户端，完成安装。
+在 "VNC Server官网": https://www.realvnc.com/en/connect/download/vnc/   下载VNC Server电脑版客户端，根据自己电脑系统选择Windows版、MacOS版或者是Linux版客户端，完成安装。
 
 ## Step 1:在树莓派上启动VNC Server服务端
 在树莓派上打开终端，输入以下命令启动VNC Server服务：
