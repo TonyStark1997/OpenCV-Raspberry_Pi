@@ -1,8 +1,13 @@
 # Configuring Raspberry Pi
 
 第一天的学习内容为配置树莓派的一些基本设置，包括更改下载源、安装一些必要软件、调整显示器布局、设置地区时间等
+
 ***
+
 ## Step 0:准备材料清单
+
+***
+
 Raspberry Pi 3B
 Camera V2
 5V电源线和插头
@@ -10,6 +15,9 @@ Camera V2
 鼠标、键盘、显示器和Wi-Fi或网线
 
 ## Step 1:SD卡烧写系统
+
+***
+
 到raspberry pi官网下载最新版Raspbian系统镜像
 
 ![image1](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_1/Image/屏幕快照%202018-09-08%20下午1.15.56.png)
@@ -39,8 +47,16 @@ Camera V2
 **注意：如果显示器右上角有显示黄色小闪电标志则说明供电插头输出电流不够，需更换大电流电源插头，电源电流不足会导致系统外设不能正常工作甚至树莓派关机不能启动**
 
 ## Step 2：安装Vim编辑器
+
+***
+
 开机后首先安装Vim编辑器，以方便修改文件代码，raspbian自带的nano和vi不太好用，新手使用起来可能无法顺利进行编辑文本。开机后按Control+Alt+T快捷键打开终端，然后输入下面代码：
 >sudo apt-get install vim
 
 输入完按回车键执行命令,出现[y/n]后输入y确认安装，等待安装成功。
 
+## Step 3:更改下载源
+
+***
+
+树莓派默认的下载源是外国的源地址，通常在apt-get命令进行下载时速度会比较慢，建议更换为国内的[清华源](https://mirrors.tuna.tsinghua.edu.cn)，资源丰富并且下载速度快。
