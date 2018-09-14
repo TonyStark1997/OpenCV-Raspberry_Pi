@@ -18,7 +18,7 @@ Camera V2
 
 ***
 
-到raspberry pi官网下载最新版Raspbian系统镜像
+到[raspberry pi官网](https://www.raspberrypi.org)下载最新版Raspbian系统镜像
 
 ![image1](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_1/Image/屏幕快照%202018-09-08%20下午1.15.56.png)
 
@@ -51,7 +51,9 @@ Camera V2
 ***
 
 开机后首先安装Vim编辑器，以方便修改文件代码，raspbian自带的nano和vi不太好用，新手使用起来可能无法顺利进行编辑文本。开机后按Control+Alt+T快捷键打开终端，然后输入下面代码：
->sudo apt-get install vim
+```shell
+sudo apt-get install vim
+```
 
 输入完按回车键执行命令,出现[y/n]后输入y确认安装，等待安装成功。
 
