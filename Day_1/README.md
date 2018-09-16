@@ -107,4 +107,4 @@ Camera V2
 
 最后放一张我的配置后的树莓派界面。
 
-![image6](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_1/Image/屏幕快照%202018-09-10%20下午8.02.26%20.png)
+![image6](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_1/Image/屏幕快照%202018-09-10%20下午8.02.26.png)
