@@ -95,6 +95,8 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
+**具体使用方法请参考[此网页](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/)**
+
 ## Step 4:进行一些自定义
 
 ***
