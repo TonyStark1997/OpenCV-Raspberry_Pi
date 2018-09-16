@@ -56,8 +56,8 @@ Camera V2
 
 开机后首先安装Vim编辑器，以方便修改文件代码，raspbian自带的nano和vi不太好用，新手使用起来可能无法顺利进行编辑文本。开机后按Control+Alt+T快捷键打开终端，然后输入下面代码：
 
-```shell
-sudo apt-get install vim
+```bash
+～ $ sudo apt-get install vim
 ```
 
 输入完按回车键执行命令,出现[y/n]后输入y确认安装，等待安装成功。
@@ -70,14 +70,14 @@ sudo apt-get install vim
 
 在终端中输入以下命令：
 
-```shell
-cd /etc/apt/
+```bash
+~ $ cd /etc/apt/
 ```
 
 进入到/etc/apt/目录下，之后使用vim修改sources.list文件，此文件为apt下载软件的地址源。
 
-```shell
-sudo vim sources.list
+```bash
+~ $ sudo vim sources.list
 ```
 
 进入vim编辑器后按“i”键进入vim的输入模式(具体vim使用方法请自行了解)，之后删除文件内全部内容，并输入新地址源。
@@ -90,9 +90,9 @@ sudo vim sources.list
 
 之后在终端内输入以下代码更新源地址并升级树莓派内软件：
 
-```shell
-sudo apt-get update
-sudo apt-get upgrade
+```bash
+~ $ sudo apt-get update
+~ $ sudo apt-get upgrade
 ```
 
 **具体使用方法请参考[此网页](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/)**
@@ -101,7 +101,7 @@ sudo apt-get upgrade
 
 ***
 
-完成上述步骤后树莓派既可以正常工作，你可以在进行一些自定义包括更换壁纸和界面风格、安装中文输入法、更换时区、调整显示器分辨率等，具体过程请根据需求自行百度，这里不再赘述。
+完成上述步骤后树莓派既可以正常工作，你可以在进行一些自定义包括更改用户名和密码、更换壁纸和界面风格、安装中文输入法、更换时区、调整显示器分辨率等，具体过程请根据需求自行百度，这里不再赘述。
 
 希望大家自行熟悉vim使用方法、Linux操作命令和Linux操作系统相关知识。
 
