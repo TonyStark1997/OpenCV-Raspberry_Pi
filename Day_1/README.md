@@ -9,9 +9,13 @@
 ***
 
 Raspberry Pi 3B
+
 Camera V2
+
 5V电源线和插头
+
 16G内存SD卡
+
 鼠标、键盘、显示器和Wi-Fi或网线
 
 ## Step 1:SD卡烧写系统
@@ -79,6 +83,7 @@ sudo vim sources.list
 进入vim编辑器后按“i”键进入vim的输入模式(具体vim使用方法请自行了解)，之后删除文件内全部内容，并输入新地址源。
 
 >deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ wheezy main non-free contrib
+
 >deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ wheezy main non-free contrib
 
 输入完成后按键盘“Esc”键，之后输入“:wq!”保存并退出vim编辑器。
@@ -100,4 +105,4 @@ sudo apt-get upgrade
 
 最后放一张我的配置后的树莓派界面。
 
-[image6](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_1/Image/屏幕快照%202018-09-10%20下午8.02.26%20(2).png)
+![image6](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_1/Image/屏幕快照%202018-09-10%20下午8.02.26%20(2).png)
