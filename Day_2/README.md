@@ -2,6 +2,8 @@
 
 第二天的学习内容为配置好VNC Server，通过Wi-Fi或网线用电脑远程控制树莓派并显示树莓派图形界面，这样的话可以大大减少树莓派的外设，包括鼠标键盘显示器等。
 
+更多内容请关注我的GitHub库：https://github.com/TonyStark1997，如果喜欢，star并follow我！
+
 ***
 
 ## Step 0:在电脑上安装VNC Server客户端
@@ -10,7 +12,7 @@
 
 在[VNC Server官网](https://www.realvnc.com/en/connect/download/vnc/)   下载VNC Server和VNC Viewer电脑版客户端，根据自己电脑系统选择Windows版、MacOS版或者是Linux版客户端，完成安装。
 
-![image1](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_2/image/屏幕快照%202018-09-16%20下午8.31.50.png)
+![image1](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_2/Image/image1.png)
 
 ## Step 1:在树莓派上启动VNC Server服务端
 
@@ -76,7 +78,7 @@
 ~ $ sudo vim realvnc.desktop
 ```
 
-![image2](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_2/image/屏幕快照%202018-09-16%20下午8.25.04.png)
+![image2](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_2/Image/image2.png)
 
 此时打开了这个空的脚本，单击键盘“i”键进入Vim的文本输入模式，之后在文本编辑器中输入以下代码内容：
 
@@ -84,11 +86,11 @@
 [Desktop Entry]
 Type=Application
 Name=RealVNC
-Rxec=vncserver -geometry 1920x1080 :1
+Exec=vncserver -geometry 1920x1080 :1
 StartopNotify=false
 ```
 
-![image3](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_2/image/屏幕快照%202018-09-16%20下午8.25.59.png)
+![image3](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_2/Image/image3.png)
 
 输入完毕后点击键盘'Esc'键退出Vim的输入模式，之后输入以下命令保存并退出Vim文本编辑器：
 

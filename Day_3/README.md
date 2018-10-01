@@ -1,8 +1,10 @@
 # Configure the OpenCV environment
 
-在本篇文章中，我们将在Raspberry Pi3上配置带有python3.5的OpenCV3.4.0环境。
+在本篇文章中，我们将在Raspberry Pi3上配置带有python3.5的OpenCV3.4.1环境。
 
 第三天的学习内容难度较大，而且在OpenCV编译的过程很漫长，所以建议大家仔细耐心的看好每一步和每一个操作，避免在配置环境中出现错误导致需要重新配置环境
+
+更多内容请关注我的GitHub库：https://github.com/TonyStark1997，如果喜欢，star并follow我！
 
 ***
 
@@ -28,6 +30,8 @@
 ~ $ df -h
 ```
 
+![image1](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_3/Image/image1.png)
+
 之后重启树莓派：
 
 ```bash
@@ -49,32 +53,9 @@
 ~ $ sudo apt-get autoremove
 ```
 
-## Step 2:安装cmake
+![image2](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_3/Image/image2.png)
 
-***
-
-编译OpenCV需要使用Cmake进行编译，但是apt-get中的cmake版本较低无法进行编译，所以我们先到[cmake官网](https://cmake.org)下载最新版的camke或者直接用下面命令进行下载：
-
-```bash
-~ $ wget http://www.cmake.org/files/v3.12/cmake-3.12.2.tar.gz
-```
-
-之后解压：
-
-```bash
-~ $ tar -zxvf cmake-3.12.2.tar.gz
-```
-
-进入camke3.12.2文件夹并安装：
-
-```bash
-~ $ cd camke3.12.2
-~ $ ./configure
-~ $ make
-~ $ sudo make install
-```
-
-## Step 3:安装依赖包
+## Step 2:安装依赖包
 
 ***
 
@@ -85,6 +66,8 @@
 ~ $ sudo apt-get upgrade
 ```
 
+![image4](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_3/Image/image4.png)
+
 之后重启树莓派：
 
 ```bash
@@ -94,66 +77,66 @@
 重启之后打开终端，按照如下步骤安装相关软件和依赖包:
 
 ```bash
-~ $ sudo apt-get install build-essential pkg-config -y
-~ $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev -y
-~ $ sudo apt-get install libxvidcore-dev libx264-dev -y
-~ $ sudo apt-get install libgtk2.0-dev libgtk-3-dev -y
-~ $ sudo apt-get install libatlas-base-dev gfortran -y
+~ $ sudo apt-get install build-essential cmake pkg-config
+~ $ sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+~ $ sudo apt-get libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+~ $ sudo apt-get libxvidcore-dev libx264-dev
+~ $ sudo apt-get libgtk2.0-dev libgtk-3-dev
+~ $ sudo apt-get install libatlas-base-dev gfortran
 ```
 
-## Step 4:安装Python3、numpy库和相关依赖
+![image5](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_3/Image/image5.png)
+
+**注意：如果安装过程中有报错的话就一个一个的分开安装，有些依赖项的最新版本肯能会改名字。当出现说已安装更高版本的提示或者是已安装最新版本时则可以跳过此依赖项**
+
+## Step 3:安装Python3、numpy库和相关依赖
 
 ***
 
 安装Python3和numpy
 
 ```bash
-~ $ sudo apt-get install python3 python3-setuptools python3-dev -y
+~ $ sudo apt-get install python3 python3-setuptools python2.7-dev python3-dev
 ~ $ wget https://bootstrap.pypa.io/get-pip.py
+~ $ sudo python get-pip.py
 ~ $ sudo python3 get-pip.py
-~ $ sudo pip3 install numpy
+~ $ sudo pip3 install numpy scipy
 ```
 
-## Step 5:下载OpenCV3.4.0和OpenCV contrib额外模块
+## Step 4:下载OpenCV3.4.1和OpenCV contrib额外模块
 
 ***
 
-使用以下命令下载OpenCV3.4.0和OpenCV contrib额外模块：
+使用以下命令下载OpenCV3.4.1和OpenCV contrib额外模块：
 
 ```bash
 ~ $ cd ~
-~ $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.0.zip
+~ $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.1.zip
 ~ $ unzip opencv.zip
-~ $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.4.0.zip
+~ $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.4.1.zip
 ~ $ unzip opencv_contrib.zip
 ```
 
-## Step 6:编译并安装适用于Python3的OpenCV3.4.0
+## Step 5:编译并安装适用于Python3的OpenCV3.4.1
 
 ***
 
 使用cmake进行编译
 
 ```bash
-~ $ cd opencv-3.4.0
-~/opencv-3.4.0 $ mkdir build
-~/opencv-3.4.0 $ cd build
-~/opencv-3.4.0/build $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+~ $ cd opencv-3.4.1
+~/opencv-3.4.1 $ mkdir build
+~/opencv-3.4.1 $ cd build
+~/opencv-3.4.1/build $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D CMAKE_INSTALL_PREFIX=/usr/local \
--D BUILD_opencv_java=OFF \
--D BUILD_opencv_python2=OFF \
--D BUILD_opencv_python3=ON \
--D PYTHON_DEFAULT_EXECUTABLE=$(which python3) \
--D INSTALL_C_EXAMPLES=OFF \
 -D INSTALL_PYTHON_EXAMPLES=ON \
--D BUILD_EXAMPLES=ON\
--D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.0/modules \
--D WITH_CUDA=OFF \
--D BUILD_TESTS=OFF \
--D BUILD_PERF_TESTS= OFF ..
+-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.1/modules \
+-D BUILD_EXAMPLES=ON ..
 ```
 
-## Step 7:交换空间大小获得更多虚拟内存
+![image6](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_3/Image/image6.png)
+
+## Step 6:交换空间大小获得更多虚拟内存
 
 ***
 
@@ -162,7 +145,7 @@
 打开 /etc/dphys-swapfile，并修改CONF_SWAPSIZE参数：
 
 ```bash
-~ $ sudo vim /etc/dphys-swapfile
+~/opencv-3.4.1/build $ sudo vim /etc/dphys-swapfile
 ```
 
 之后按“i”键进入输入模式，修改CONF_SWAPSIZE参数为1024:
@@ -176,46 +159,50 @@ CONF_SWAPSIZE=1024
 
 修改完后按“Esc”键推出输入模式，之后输入“:wq!”保存并退出。
 
+![image7](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_3/Image/image7.png)
+
 然后通过以下命令使其生效：
 
 ```bash
-~ $ sudo /etc/init.d/dphys-swapfile stop
-~ $ sudo /etc/init.d/dphys-swapfile start
+~/opencv-3.4.1/build $ sudo /etc/init.d/dphys-swapfile stop
+~/opencv-3.4.1/build $ sudo /etc/init.d/dphys-swapfile start
 ```
 
-## Step 8:进行编译
+## Step 7:进行编译
 
 ***
 
 使用四个核心编译：
 
 ```bash
-~ $ make -j4
+~/opencv-3.4.1/build $ make -j4
 ```
 
-## Step 9:使用单核进行编译
+![image8](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_3/Image/image8.png)
+
+## Step 8:使用单核进行编译
 
 ***
 
 如果由于内存问题而在编译时遇到任何错误，则可以使用以下命令仅使用一个内核再次编译：
 
 ```bash
-~ $ sudo make clean
-~ $ sudo make
+~/opencv-3.4.1/build $ sudo make clean
+~/opencv-3.4.1/build $ sudo make
 ```
 
-## Step 10:安装构建
+## Step 9:安装构建
 
 ***
 
 编译构建后，使用以下命令安装构建：
 
 ```bash
-~ $ sudo sudo make install
-~ $ sudo ldconfig
+~/opencv-3.4.1/build $ sudo sudo make install
+~/opencv-3.4.1/build $ sudo ldconfig
 ```
 
-## Step 11:验证OpenCV构建
+## Step 10:验证OpenCV构建
 
 ***
 
@@ -235,10 +222,10 @@ CONF_SWAPSIZE=1024
 
 ```
 ~ $ cd /usr/local/lib/python3.5/dist-packages/
-/usr/local/lib/python3.5/dist-packages/$ sudo mv /usr/local/lib/python3.5/dist-packages/cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
+/usr/local/lib/python3.5/dist-packages/ $ sudo mv /usr/local/lib/python3.5/dist-packages/cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
 ```
 
-## Step 12:测试OpenCV安装是否成功
+## Step 11:测试OpenCV安装是否成功
 
 ***
 
@@ -249,12 +236,14 @@ Python 3.5.3 (default, Jan 19 2017, 14:11:04)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import cv2
 >>> cv2.__version__
-'3.4.0'
+'3.4.1'
 ```
+
+![image9](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_3/Image/image9.png)
 
 如果此处没有问题则说明安装成功。
 
-## Step 13:删除OpenCV压缩包
+## Step 12:删除OpenCV压缩包
 
 ***
 
@@ -263,7 +252,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ~ $ rm opencv.zip opencv_contrib.zip
 ```
 
-## Step 14:交换回空间
+## Step 13:交换回空间
 
 ***
 
@@ -290,7 +279,7 @@ CONF_SWAPSIZE=100
 ~ $ sudo /etc/init.d/dphys-swapfile start
 ```
 
-## Step 15:结束
+## Step 14:结束
 
 ***
 
