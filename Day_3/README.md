@@ -1,6 +1,6 @@
 # Configure the OpenCV environment
 
-在本篇文章中，我们将在Raspberry Pi3上配置带有python3.5的OpenCV3.4.1环境。
+在本篇文章中，我们将在Raspberry Pi3上配置带有python3.5和python2.7的OpenCV3.4.1环境。
 
 第三天的学习内容难度较大，而且在OpenCV编译的过程很漫长，所以建议大家仔细耐心的看好每一步和每一个操作，避免在配置环境中出现错误导致需要重新配置环境
 
@@ -87,7 +87,7 @@
 
 ![image5](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_3/Image/image5.png)
 
-**注意：如果安装过程中有报错的话就一个一个的分开安装，有些依赖项的最新版本肯能会改名字。当出现说已安装更高版本的提示或者是已安装最新版本时则可以跳过此依赖项**
+**注意：如果安装过程中有报错的话就一个一个的分开安装，有些依赖项的最新版本肯能会改名字。当出现说已安装更高版本的提示或者是已安装最新版本时则可以跳过此依赖项；如果出现依赖项不能安装，请把apt的下载源改回树莓派官方的下载源。**
 
 ## Step 3:安装Python3、numpy库和相关依赖
 
@@ -100,6 +100,7 @@
 ~ $ wget https://bootstrap.pypa.io/get-pip.py
 ~ $ sudo python get-pip.py
 ~ $ sudo python3 get-pip.py
+~ $ sudo pip install numpy scipy
 ~ $ sudo pip3 install numpy scipy
 ```
 

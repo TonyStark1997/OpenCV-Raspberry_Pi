@@ -86,9 +86,9 @@ Camera V2
 
 进入vim编辑器后按“i”键进入vim的输入模式(具体vim使用方法请自行了解)，之后删除文件内全部内容，并输入新地址源。
 
->deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ wheezy main non-free contrib
+>deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ jessie main non-free contrib
 
->deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ wheezy main non-free contrib
+>deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ jessie main non-free contrib
 
 输入完成后按键盘“Esc”键，之后输入“:wq!”保存并退出vim编辑器。
 
@@ -100,6 +100,8 @@ Camera V2
 ```
 
 **具体使用方法请参考[此网页](https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/)**
+
+**如果在使用apt-get进行安装opencv相关依赖是出现无法解决的问题，则建议把下载源换回成官方指定的原下载源**
 
 ## Step 4:进行一些自定义
 
