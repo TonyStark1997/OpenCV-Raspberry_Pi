@@ -276,4 +276,6 @@ break
 
 没错，以上就是作者本人了。
 
+![image10](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image10.png)
+
 本篇文章的内容就到这里。
