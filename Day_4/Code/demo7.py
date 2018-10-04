@@ -1,0 +1,23 @@
+from picamera.array import PiRGBArray
+from picamera import PiCamera
+import cv2
+import time
+
+camera = PiCamera()
+camera.resolution = (640, 480)
+camera.framerate = 32
+camera.hflip = True
+#水平方向反转画面
+#camera.hflip = True
+#垂直方向反转画面
+rawCapture = PiRGBArray(camera, size = (640, 480))
+
+time.sleep(0.1)
+
+for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
+    image = frame.array
+    cv2.imshow("Frame", image)
+    key = cv2.waitKey(1) & 0xFF
+    rawCapture.truncate(0)
+    if key == ord("q"):
+        break
