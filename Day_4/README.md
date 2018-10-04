@@ -21,11 +21,11 @@
 
 >点击左上角树莓派标志 > Preferences > Raspberry Pi Configuration
 
-![image1]()
+![image1](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image1.png)
 
 打开树莓派设置页面后选择interfaces页面，将Camera功能设置为Enabled，即打开了摄像头功能。
 
-![image2]()
+![image2](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image2.png)
 
 ## Step 2:安装所需模块
 
@@ -63,7 +63,9 @@ cv.imwrite('opencv.png',img)
 cv.destroyAllWindows()
 ```
 
-在程序所在目录中有一张名为‘opencv_logo’的jpg格式图片，具体是什么图片读者可以自己定义，只要准确知道图片的名字和格式即可。在以上的程序中，我们使用OpenCV加载并显示了opencv_logo.jpg，并可以通过键盘按键“Esc”和“s”选择关闭显示窗口或者在程序所在目录将图片另存为opencv.png文件.
+在程序所在目录中有一张名为‘opencv_logo’的jpg格式图片，具体是什么图片读者可以自己定义，只要准确知道图片的名字和格式即可。在以上的程序中，我们使用OpenCV加载并显示了opencv_logo.jpg，并可以通过键盘按键“Esc”和“s”选择关闭显示窗口或者在程序所在目录将图片另存为opencv.png文件。
+
+![image3](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image3.png)
 
 ### demo2
 
@@ -100,6 +102,8 @@ cv.destroyWindow(winname)
 
 上面这段程序在一个窗口内分别绘制了一条直线、一个矩形、一个圆、半个椭圆、一个不规则四边形和添加了“OpenCV”一段文字。并可以通过键盘按键“q”退出并关闭窗口。
 
+![image4](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image4.png)
+
 ### demo3
 
 在第三个程序中，我们学习如何使用OpenCV鼠标事件在双击的地方画出一个蓝色的圆，并通过键盘按键“Esc”退出并关闭窗口：
@@ -121,6 +125,8 @@ if cv.waitKey(20) & 0xFF == 27:
 break
 cv.destroyAllWindows()
 ```
+
+![image5](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image5.png)
 
 ### demo4
 
@@ -163,6 +169,8 @@ break
 cv.destroyAllWindows()
 ```
 
+![image6](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image6.png)
+
 ### demo5
 
 在第五个程序中，我们学习如何使用OpenCV建立一个使用轨迹栏调色的调色板：
@@ -202,6 +210,8 @@ break
 cv.destroyAllWindows()
 ```
 
+![image7](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image7.png)
+
 ### demo6
 
 在第六个程序中，我们学习如何使用OpenCV和matplotlib建立五种图片边框：
@@ -225,6 +235,8 @@ plt.subplot(235),plt.imshow(wrap,'gray'),plt.title('WRAP')
 plt.subplot(236),plt.imshow(constant,'gray'),plt.title('CONSTANT')
 plt.show()
 ```
+
+![image8](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image8.png)
 
 ## Step 4:实时显示摄像头所拍摄画面
 
@@ -260,5 +272,8 @@ break
 
 使用python3运行上面一段程序即可通过窗口显示出摄像头所拍摄的实时画面
 
+![image9](https://raw.githubusercontent.com/TonyStark1997/OpenCV-Raspberry_Pi/master/Day_4/Image/image9.png)
 
+没错，以上就是作者本人了。
 
+本篇文章的内容就到这里。
